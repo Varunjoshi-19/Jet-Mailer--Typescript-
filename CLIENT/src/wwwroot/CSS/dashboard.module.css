@@ -1,0 +1,80 @@
+
+.inboxAndPPSUContainer {
+  overflow-y: auto;
+  height: inherit;
+}
+
+.inboxAndPPSUContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.inboxAndPPSUContainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.inboxAndPPSUContainer::-webkit-scrollbar-thumb {
+  background: #999;
+}
+
+.inboxAndPPSUContainer::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+
+
+.ppsuwrapper {
+  width: 80%;
+  display: flex;
+  gap: 12px;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tab {
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 8px 16px;
+  width: 25%;
+  height: 100%;
+  gap: 10px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  color: #555;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.tab:hover {
+  background-color: #f5f5f5;
+}
+
+.tab.active {
+  color: #1a73e8;
+  border-bottom: 3px solid #1a73e8;
+}
+
+.newMail {
+  display: flex;
+  padding: 3px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  color: white;
+  font-weight: 600;
+  width: auto;
+  font-size: 10px;
+  border-radius: 20px;
+  left: 120px;
+  height: 20px;
+  top: 10px;
+}
+
+.latestMail {
+  position: absolute;
+  font-size: 10px;
+  bottom: 0px;
+}
+

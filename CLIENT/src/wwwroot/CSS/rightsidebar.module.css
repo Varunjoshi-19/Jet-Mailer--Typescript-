@@ -1,0 +1,41 @@
+.rightSideIconsContainer {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+  justify-content: space-between;
+  height: 100vh;
+  transition: transform 200ms ease;
+  transform: translateX(0);
+    background-color: var(--body-background-color);
+
+}
+
+.rightHidden {
+  transform: translateX(100px);
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.rightTopSideIconsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.rightSideIconsContainer img {
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.rightSideIconsContainer img:hover {
+  background-color: rgba(200, 200, 200, 0.76);
+}
+

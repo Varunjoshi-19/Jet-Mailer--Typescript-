@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+:root {
+     --body-background-color : #F8FAFD;
+}
+
+
+*,
+*::before,
+*::after {
+
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--body-background-color);
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+

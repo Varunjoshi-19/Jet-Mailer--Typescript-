@@ -1,0 +1,135 @@
+.nav {
+  position: relative;
+  width: 100vw;
+  height: 55px;
+  align-items: center;
+  display: flex;
+  background-color: var(--body-background-color);
+  color: black; 
+}
+
+.leftSideItems {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 50%;
+  padding: 10px;
+  justify-content: flex-start;
+}
+
+.searchBarContainer {
+  display: flex;
+  z-index: 50;
+  flex-direction: column;
+  position: absolute;
+  top: 5px;
+  left: 200px;
+  width: 50%;
+  background-color: #E9EEF6;
+  height: 45px;
+  border-radius: 20px;
+  padding: 4px;
+  gap: 5px;
+  transition: background-color 400ms, height 400ms;
+  overflow: hidden;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: flex-start;
+  height: 40px;
+  border-radius: 20px;
+  width: 100%;
+  align-items: center;
+  gap: 5px;
+  padding: 0 8px;
+}
+
+.input {
+  width: 88%;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  background-color: transparent;
+  height: 100%;
+}
+
+.searchBarContainer:focus-within {
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2),
+    inset 0 2px 4px rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+}
+
+.expanded {
+  height: 100px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2),
+    inset 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.rightSideItems {
+  display: flex;
+  gap: 5px;
+  width: 50%;
+  padding: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.icon {
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconSmall {
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchIcon {
+  cursor: default;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+.icon:hover {
+  background-color: rgba(163, 163, 163, 0.212);
+}
+
+.userProfileIcon {
+  display: flex;
+  color: white;
+  overflow: hidden;
+  width: 30px;
+  cursor: pointer;
+  height: 30px;
+  background-color: rgb(1, 24, 1);
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* small responsive tweak */
+@media (max-width: 900px) {
+  .searchBarContainer {
+    left: 16px;
+    right: 16px;
+    width: auto;
+  }
+}
+

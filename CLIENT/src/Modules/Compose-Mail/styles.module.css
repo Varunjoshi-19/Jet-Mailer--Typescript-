@@ -1,0 +1,513 @@
+.overlay {
+    position: fixed;
+    background-color: rgba(6, 6, 6, 0.349);
+    z-index: 90;
+    top: 0px;
+    left : 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.normalContainer {
+    position: fixed;
+    right: 100px;
+    bottom: -10px;
+    z-index: 100;
+    background-color: #fff;
+    width: 650px;
+    border-radius: 10px;
+    height: 650px;
+    box-shadow: 4px 20px 10px 6px rgba(0, 0, 0, 0.247),
+        inset 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.expandedContainer {
+    z-index: 100;
+    position: absolute;
+    left: 10%;
+    top: 5%;
+    background-color: #fff;
+    width: 1000px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 750px;
+    box-shadow: 4px 20px 10px 6px rgba(0, 0, 0, 0.247),
+        inset 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+
+
+.topHeadNewMessage {
+    width: 100%;
+    font-size: 14px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+    height: 40px;
+    background-color: #F2F6FC;
+}
+
+.toogleIcons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+
+}
+
+
+.toogleIcons img:hover {
+    cursor: pointer;
+    background-color: #bababa;
+
+}
+
+
+/* MAIN CONTAINER */
+
+.mainContainer {
+    display: flex;
+    position: relative;
+    padding: 0px 15px;
+    gap: 5px;
+    height: 100%;
+    margin-top: 10px;
+    flex-direction: column;
+
+
+}
+
+
+input {
+    padding: 5px 0px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+
+
+}
+
+#Subject {
+    border-bottom: 1px solid rgba(125, 125, 125, 0.351);
+}
+
+input[type="email"]:focus {
+    margin-left: 10px;
+    padding: 5px 25px;
+
+}
+
+input[type="email"]:focus::placeholder {
+    color: transparent;
+}
+
+
+.To_Fixed {
+    position: absolute;
+    top: 4px;
+    color: rgb(93, 93, 93);
+}
+
+
+.uploadFilesAndTextArea {
+    overflow-y: auto;
+    height: 60%;
+}
+
+.uploadedFileContainer {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.uploadedFileContainer .eachFileBox {
+    background-color: #F5F5F5;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px;
+    justify-content: space-between;
+    width: 450px;
+    height: 28px;
+}
+
+.eachFileBox a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    color: #1155CC;
+}
+
+.eachFileBox span {
+    font-weight: bolder;
+    color: rgb(33, 33, 33);
+}
+
+.BodyTextArea {
+    position: relative;
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    min-height: 80%;
+    font-size: 14px;
+    line-height: 1.4;
+    padding: 8px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.uploadFilesAndTextArea::-webkit-scrollbar {
+    width: 10px;
+}
+
+.uploadFilesAndTextArea::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.uploadFilesAndTextArea::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.uploadFilesAndTextArea::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+
+/* Compose styling  */
+
+.toolbarContainer {
+    display: flex;
+    position: absolute;
+    bottom: 60px;
+    flex-direction: column;
+    gap: 10px;
+    width: 410px;
+}
+
+.allTools {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px;
+    border-radius: 20px;
+    background-color: #F2F6FC;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    gap: 5px;
+    min-width: 500px;
+}
+
+.topTools {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 4px 4px;
+    border-radius: 20px;
+    transition: background-color 200ms;
+
+}
+
+.topTools:hover {
+    background-color: rgba(120, 120, 120, 0.315);
+
+}
+
+.bottomTools {
+    display: flex;
+    height: 30px;
+    min-width: 30px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 100%;
+    transition: background-color 200ms;
+}
+
+.bottomTools:hover {
+    background-color: rgba(120, 120, 120, 0.296);
+}
+
+.SendButton {
+    display: flex;
+    padding: 5px;
+    width: auto;
+    border: none;
+    border-radius: 20px;
+
+}
+
+.SendButton button {
+    padding: 8px 5px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(0, 55, 255);
+
+}
+
+.SendButton #send {
+    width: 70px;
+    border-right: 1px solid white;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+}
+
+.SendButton #dropDownIcon {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.activeIcon {
+    background-color: #1156cc56;
+}
+
+
+/* FONT FAMILY BOX */
+.fontFamilyBox {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    width: 70px;
+    height: 40px;
+    align-items: center;
+}
+
+
+.fontFamilySelection {
+    position: relative;
+}
+
+.fontsizeSection {
+    position: relative;
+}
+
+
+/* Insert link pop up */
+
+.insertLinkPopup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    width: 350px;
+    padding: 10px;
+    height: 100px;
+    background-color: #fff;
+    top: 160px;
+    gap: 5px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.247),
+        inset 0 2px 4px rgba(255, 255, 255, 0.5);
+    left: 20px;
+
+}
+
+.insertLinkPopup div {
+    display: flex;
+    position: relative;
+    border: 2px solid rgba(39, 39, 39, 0.312);
+    border-radius: 5px;
+    width: 65%;
+    gap: 20px;
+    padding: 2px;
+}
+
+.insertLinkPopup div button {
+    position: absolute;
+    right: -100px;
+    bottom: 0px;
+    border: none;
+    outline: none;
+    padding: 7px 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    color: rgb(0, 119, 255);
+    font-weight: bold;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.disableApplyBtn {
+    opacity: 0.6;
+
+}
+
+.activeApplyButton {
+    opacity: 1;
+
+}
+
+.insertLinkPopup .activeApplyButton:hover {
+    background-color: #1156cc22;
+}
+
+.insertLinkPopup div input {
+    width: 90%;
+    border: none;
+    outline: none;
+}
+
+.insertLinkPopup div:focus-within {
+    border: 2px solid blue;
+}
+
+
+.insertLinkPopup div img {
+    width: 18px;
+    margin-left: 5px;
+    object-fit: contain;
+}
+
+
+/* SUGGESTION LINK BOX */
+
+.suggestionLinkBox {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: fixed;
+    z-index: 9999;
+    background: white;
+    border: 1px solid lightgray;
+    padding: 4px 8px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+/* SEARCH USERS LIST MODULE */
+
+.searchUsersList {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 400px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    max-height: 320px;
+    z-index: 10;
+}
+
+.userItem {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.userItem:hover {
+    background: #f5f5f5;
+}
+
+.avatar,
+.defaultAvatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #555;
+    margin-right: 12px;
+    object-fit: cover;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.userName {
+    font-weight: 600;
+    font-size: 15px;
+    color: #222;
+}
+
+.userEmail {
+    font-size: 13px;
+    color: #666;
+}
+
+/* SEARCH USERS LIST MODULE */
+
+
+
+.dynamicEmailsAndInputField {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 4px;
+    width: 100%;
+    padding: 4px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(125, 125, 125, 0.351);
+
+}
+
+
+.recepientInput {
+    outline: none;
+    width: 100%;
+    min-height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+
+
+
+.allSelectedEmails {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 30px;
+    gap: 5px;
+
+
+
+}
+
+.allSelectedEmails #eachEmail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2px;
+    font-size: 15px;
+    width: auto;
+    height: 30px;
+    cursor: pointer;
+    border: 1px solid rgb(87, 87, 87);
+    padding: 2px 5px;
+    border-radius: 20px;
+
+}
+
+.allSelectedEmails #eachEmail:hover {
+    background-color: #bababa38;
+}

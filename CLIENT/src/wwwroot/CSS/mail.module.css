@@ -1,0 +1,241 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px;
+  gap : 20px;
+  box-sizing: border-box;
+}
+
+.mailBody {
+  all: unset;
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  height: auto !important;
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+
+.topIconContainer {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+
+}
+
+.topIconContainer .eachIcon {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  object-fit: contain;
+  transition: background-color 300ms ease-out;
+}
+
+.topIconContainer .eachIcon:hover {
+  background-color: rgba(189, 189, 189, 0.379);
+
+}
+
+
+.mainContainer::-webkit-scrollbar {
+  width: 10px;
+}
+
+.mainContainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.mainContainer::-webkit-scrollbar-thumb {
+  background: #b7b7b7;
+}
+
+.mainContainer::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+
+.mailHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.subject {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-left: 25px;
+  width: auto;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tag {
+  background: #e8eaed;
+  color: #444;
+  font-size: 13px;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.date {
+  color: #777;
+  font-size: 13px;
+}
+
+/* Sender Info */
+.senderRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.logoAndEmailDetails {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.senderInfo {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.senderTop {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.senderName {
+  font-weight: 600;
+}
+
+.senderEmail {
+  color: #666;
+}
+
+.toMe {
+  color: #888;
+  font-size: 13px;
+}
+
+/* Divider */
+.dividerLine {
+  border-top: 3px solid #6f42c1;
+  margin: 15px 0 25px 0;
+}
+
+.mainBody {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.logo {
+  height: 50px;
+  margin: 15px 0;
+}
+
+.messageBox {
+  background: #fafafa;
+  display: inline-block;
+  text-align: left;
+  padding: 25px 30px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  line-height: 1.6;
+}
+
+.messageBox a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.footerNote {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #666;
+}
+
+.footerNote a {
+  color: #1a73e8;
+}
+
+/* Action Bar */
+.actionBar {
+  display: flex;
+  gap: 10px;
+  min-height: 200px;
+  margin-top: 20px;
+  height: auto !important;
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+.actionBar button {
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  border-radius: 20px;
+  padding: 8px 18px;
+  height: 40px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.actionBar button:hover {
+  background: #ebebeb;
+}
+
+.reply::before {
+  content: "↩ ";
+}
+
+.forward::before {
+  content: "⤴ ";
+}
+
+.smiley {
+  font-size: 18px;
+  padding: 6px 10px;
+}
+
+.allAttachments {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto !important;
+  min-height: 300px;
+  overflow: visible !important;
+  max-height: none !important;
+}
