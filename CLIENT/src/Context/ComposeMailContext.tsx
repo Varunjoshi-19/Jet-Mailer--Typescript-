@@ -112,10 +112,8 @@ export const ComposeMailProvider: React.FC<{ children: React.ReactNode }> = ({ c
             // also delete from Appwrite (non-blocking)
             if (data.fileId) {
                 const { appwriteBucketId } = ApiEndPoints;
-                storage
-                    .deleteFile(appwriteBucketId, data.fileId)
-                    .then(() => console.log("Deleted from Appwrite:", data.fileId))
-                    .catch((err) => console.error("Failed to delete from Appwrite:", err));
+                storage.deleteFile(appwriteBucketId, data.fileId)
+              
             }
 
             return copy;
@@ -167,11 +165,8 @@ export const ComposeMailProvider: React.FC<{ children: React.ReactNode }> = ({ c
                     return copy;
                 });
 
-                console.log("File uploaded", file.name, fileUrl);
             }
-        } catch (err) {
-            console.error("Upload failed:", err);
-
+        } catch  {
             setFilesMap((prev) => {
                 const copy = new Map(prev);
                 copy.delete(key);
@@ -324,7 +319,6 @@ export const ComposeMailProvider: React.FC<{ children: React.ReactNode }> = ({ c
             setSearchUsers([]);
             return;
         }
-        console.log("triggered", text);
         const users: UserContext[] = await userApiHandler.handleFetchUsers(text);
         const filtered = users.sort((a, b) =>
             a.username.localeCompare(b.username)
@@ -338,8 +332,7 @@ export const ComposeMailProvider: React.FC<{ children: React.ReactNode }> = ({ c
         // formData.append("email_id" , ) 
         if(existingDraftOpened) {
               setExistingDraftOpened(false);
-            const result = await emailApiService.handleUpdateExistingDraft(formData);
-            console.log("Result" , result);
+             await emailApiService.handleUpdateExistingDraft(formData);
         }
         return false;
        

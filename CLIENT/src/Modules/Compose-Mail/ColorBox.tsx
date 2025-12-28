@@ -38,7 +38,6 @@ const ColorPickerBox = () => {
                 break;
             }
             default: {
-                console.log("invalid type!!");
                 return;
             }
         }

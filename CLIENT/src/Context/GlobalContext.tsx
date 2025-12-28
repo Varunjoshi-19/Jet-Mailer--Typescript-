@@ -32,7 +32,6 @@ export const GlobalContextProvider = ({ children }: { children: React.ReactNode 
 
         socket.on("new-email-available", async (data) => {
             const { email_id } = data;
-            console.log("new email avaliable here!!");
             const result = await emailApiService.handleFetchSingleMail(email_id);
             if (result.success && result.data) {
                 setAllMails(prev => [result.data, ...prev]);

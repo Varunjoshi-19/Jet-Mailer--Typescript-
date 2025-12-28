@@ -16,7 +16,7 @@ class DbConnections {
             console.log("✅ MongoDB connected successfully");
         } catch (error: unknown) {
             if (error instanceof Error) {
-                console.error("❌ MongoDB connection failed:", error.message);
+                console.error(" MongoDB connection failed:", error.message);
                 throw error;
             }
             throw new Error("Unknown error occurred while connecting with mongodb database!");

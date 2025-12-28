@@ -33,7 +33,6 @@ export const SaveGoogleCredentails = async (data: any) => {
 
     try {
 
-        console.log("hit point" , ApiEndPoints.googleLoginUrl);
 
         const res = await fetch(ApiEndPoints.googleLoginUrl, {
             method: "POST",

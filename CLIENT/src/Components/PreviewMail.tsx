@@ -31,7 +31,6 @@ function PreviewMail() {
 
       const mail = allMails.find(each => each._id == mailId);
       if (mail) {
-        console.log("Fetched from list", mail);
         setCurrentEmail(mail);
         return;
       }
@@ -42,7 +41,6 @@ function PreviewMail() {
         navigate("/mail/inbox");
         return;
       }
-      console.log("current fetched email", result.data);
       setCurrentEmail(result.data);
 
     } catch (error) {

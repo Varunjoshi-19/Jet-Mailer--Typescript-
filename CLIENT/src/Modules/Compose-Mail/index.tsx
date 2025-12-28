@@ -29,7 +29,7 @@ interface OpenSuggestionLinkInfoProps {
 
 }
 
-function ComposeEmailPrompt({ toogleCloseAndOpen }: NewMessagePromptProps) {
+function ComposeEmailPrompt({ toogleCloseAndOpen, isDrafted }: NewMessagePromptProps) {
 
     // VARIABLES : 
 
@@ -167,7 +167,6 @@ function ComposeEmailPrompt({ toogleCloseAndOpen }: NewMessagePromptProps) {
                 return;
             }
             case NewMessageIconActions.MINIMIZE: {
-                console.log("clicked")
                 handleMinimizeMessagePrompt();
                 return;
             }
@@ -226,6 +225,8 @@ function ComposeEmailPrompt({ toogleCloseAndOpen }: NewMessagePromptProps) {
         const hasBody = textareaRef.current && textareaRef.current.innerHTML.trim() !== "";
         const hasAttachments = filesMap && filesMap.size > 0;
 
+
+        if (isDrafted && isDrafted == true) return;
         // Only create a draft if there's any user input
         if (hasReceiver || hasSubject || hasBody || hasAttachments) {
             const formData = new FormData();
@@ -270,17 +271,13 @@ function ComposeEmailPrompt({ toogleCloseAndOpen }: NewMessagePromptProps) {
                 });
             }
 
-           const result = await checkExistingDraftOpened(formData);
+            checkExistingDraftOpened(formData);
 
             try {
-                const result = await emailApiService.handleSendEmail(formData);
-                if (!result.success) {
-                    console.log("Failed to save draft:", result.message);
-                } else {
-                    console.log("Draft saved successfully!");
-                }
-            } catch (error) {
-                console.error("Error saving draft:", error);
+                await emailApiService.handleSendEmail(formData);
+
+            } catch {
+
             }
         }
 
@@ -341,7 +338,6 @@ function ComposeEmailPrompt({ toogleCloseAndOpen }: NewMessagePromptProps) {
                 y: linkRect.bottom,
             });
 
-            console.log({ link: anchor.href, x: linkRect.left, y: linkRect.bottom })
         }
     };
 
@@ -360,7 +356,6 @@ function ComposeEmailPrompt({ toogleCloseAndOpen }: NewMessagePromptProps) {
     }
 
     function handleEmailSelected(user: UserContext) {
-        console.log("click new email added");
         if (recepientEmailRef.current) {
             recepientEmailRef.current.textContent = "";
         }

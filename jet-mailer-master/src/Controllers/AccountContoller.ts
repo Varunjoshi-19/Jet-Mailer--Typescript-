@@ -10,7 +10,6 @@ class AccountController {
 
 
     handleUserLogin: RequestHandler = async (req: Request, res: Response): Promise<Response> => {
-        console.log("hit received!!");
         try {
             const user = await this.accountService.UserLogin(req.body);
 
@@ -36,7 +35,6 @@ class AccountController {
                 return res.status(404).json({ message: "email text required!!" });
             }
             email = req.query.email;
-            console.log("email", email);
             const users = await this.accountService.FetchUsers(email);
             const message = users && users.length > 0
                 ? `Total users found: ${users.length}`

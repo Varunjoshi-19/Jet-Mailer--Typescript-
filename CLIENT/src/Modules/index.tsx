@@ -143,7 +143,7 @@ export const EmailsLister = ({ allMails, type }: EmailListerProps) => {
     }
 
     const handleOpenEditorWithMaxScreen = (mail: MailItemDraft) => {
-        setExpandAndOverlay(true);
+        // setExpandAndOverlay(true);
         setComposeEmailPrompt(true);
 
         if (mail.mailBodyContent && textareaRef.current) textareaRef.current.innerHTML = mail.mailBodyContent;
@@ -184,7 +184,7 @@ export const EmailsLister = ({ allMails, type }: EmailListerProps) => {
     return (
 
         <>
-            {composeEmailPrompt && <ComposeEmailPrompt toogleCloseAndOpen={setComposeEmailPrompt} />}
+            {composeEmailPrompt && <ComposeEmailPrompt isDrafted={true} toogleCloseAndOpen={setComposeEmailPrompt} />}
             <div className={styles.inboxContainer}>
 
                 {allMails.map((mail: any, index) => (

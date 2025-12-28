@@ -1,8 +1,8 @@
-import { ApiResponse, EmailDto } from "../../DTOs/email";
+import { ApiResponse, SendEmailRequestBody  } from "../../DTOs/email";
 
 interface IEmailService {
 
-    SendEmail : (payload: Partial<EmailDto> ,attachments : Express.Multer.File[]) => Promise<ApiResponse>
+    SendEmail : (payload: Partial<SendEmailRequestBody> ,attachments : Express.Multer.File[]) => Promise<ApiResponse>
     FetchEmails : (email : string) => Promise<ApiResponse>;
 
 }

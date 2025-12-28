@@ -12,7 +12,6 @@ const Login: React.FC = () => {
         const info = await GoogleAuthentication();
         const { data, success } = info;
 
-        console.log(data);
 
         if (!success || !data) return;
 

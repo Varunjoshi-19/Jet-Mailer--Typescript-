@@ -19,7 +19,6 @@ const ViewAttachment = ({ attachment, onClose }: ViewAttachmentProps) => {
     const { imageExtensions, videoExtensions, audioExtensions, documentExtensions } = previewMailStore;
 
     const extension = attachment.contentType;
-    console.log('extension', extension);
 
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
@@ -35,7 +34,6 @@ const ViewAttachment = ({ attachment, onClose }: ViewAttachmentProps) => {
     }, []);
 
     useEffect(() => {
-        console.log('extension', extension);
 
         loadPreview();
     }, [attachment.fileUrl, extension]);

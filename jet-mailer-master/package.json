@@ -2,7 +2,7 @@
   "name": "jet-mailer-master",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/main/main.ts",
   "scripts": {
     "bulid": "tsc",
     "local": "nodemon ./src/main/main.ts",

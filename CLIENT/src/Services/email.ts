@@ -31,8 +31,7 @@ class EmailApiService {
                 data: null
             }
 
-        } catch (error: unknown) {
-            console.log(error);
+        } catch  {
             return {
                 success: false,
                 message: "Something went wrong failed to send message."
@@ -62,8 +61,7 @@ class EmailApiService {
                 data: result.data
             }
 
-        } catch (error: unknown) {
-            console.log(error);
+        } catch {
             return {
                 success: false,
                 message: "Something went wrong failed to fetch emails"
@@ -92,8 +90,7 @@ class EmailApiService {
                 data: result.data
             }
 
-        } catch (error: unknown) {
-            console.log(error);
+        } catch  {
             return {
                 success: false,
                 message: "Something went wrong failed to fetch email"
@@ -121,8 +118,7 @@ class EmailApiService {
                 data: result.data
             }
 
-        } catch (error: unknown) {
-            console.log(error);
+        } catch {
             return {
                 success: false,
                 message: "Something went wrong failed to fetch drafts"
@@ -160,8 +156,7 @@ class EmailApiService {
                 data: null
             }
 
-        } catch (error: unknown) {
-            console.log(error);
+        } catch {
             return {
                 success: false,
                 message: "Something went wrong failed to send message."

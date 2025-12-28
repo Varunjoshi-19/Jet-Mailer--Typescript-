@@ -13,14 +13,9 @@ const Drafts = () => {
       if (!user) return;
       const result = await emailApiService.handleFetchDrafts({ email: user.email });
       if (result.success && result.data) {
-        console.log("All drafts", result.data);
         setAllDrafts(result.data);
         return;
       }
-
-      console.log("Failed to fetch", result.message);
-
-
 
     })();
 

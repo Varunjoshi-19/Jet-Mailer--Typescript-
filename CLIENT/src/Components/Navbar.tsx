@@ -12,7 +12,6 @@ const NavBar: React.FC = () => {
 
   const rootStyles = getComputedStyle(document.documentElement);
   const bodyBgColor = rootStyles.getPropertyValue('--body-background-color');
-  console.log('this is that color', bodyBgColor);
 
   useEffect(() => {
     function handleDocumentClick(e: MouseEvent) {

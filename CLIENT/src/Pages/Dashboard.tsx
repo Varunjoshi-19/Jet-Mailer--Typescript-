@@ -48,7 +48,6 @@ const Dashboard: React.FC = () => {
             return each;
           })
         })
-        console.log("all fetched mails", result.data);
       }
     })();
 

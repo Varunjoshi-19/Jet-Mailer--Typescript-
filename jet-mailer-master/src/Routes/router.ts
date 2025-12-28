@@ -3,6 +3,7 @@ import { autoInjectable } from "tsyringe";
 import AccountRoute from "./normal-routes/accountRoute";
 import UserRoute from "./protected-routes/userRoute";
 import EmailRoute from "./protected-routes/emailRoute";
+import { ApiResponse } from "../DTOs/email";
 
 
 @autoInjectable()
@@ -20,7 +21,10 @@ class Routers {
 
     getRoutes(): Router {
 
-
+       this.router.get("/health" , (req ,res )  => {
+         const username = req.query?.name;
+         return res.status(200).json(`Hello ${username ?? "User"} from EC2 SERVER !!`);
+       });
 
         this.router.use("/account", this.accountRoute.getRoutes());
         this.router.use("/user", this.userRoute.getRoutes());

@@ -51,7 +51,6 @@ export const UserContextProvider = ({ children }: { children: React.ReactNode })
 
                 const parsedUser = JSON.parse(currentLoggedInUser);
                 const { email, _id } = parsedUser as UserContext;
-                console.log("req recevied of connection", email, _id);
                 socket.emit("connectionDetails", { email: email, userId: _id });
             }
 

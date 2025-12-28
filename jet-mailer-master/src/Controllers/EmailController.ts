@@ -13,7 +13,6 @@ class EmailController {
     handleSendEmail: RequestHandler = async (req: Request, res: Response): Promise<Response> => {
         try {
             const payload = req.body;
-            console.log("Paylod data", payload);
 
 
             const result: ApiResponse = await this.emailService.SendEmail(payload);
@@ -46,7 +45,6 @@ class EmailController {
                 return res.status(404).json({ message: "email text required!!" });
             }
             email = req.query.email;
-            console.log("email", email);
             const result = await this.emailService.FetchEmails(email);
             if (!result.success) {
                 return res.status(400).json({ message: result.message, sendStatus: result.success });
@@ -79,7 +77,6 @@ class EmailController {
                 return res.status(404).json({ message: "email text required!!" });
             }
             mail_id = req.query.id;
-            console.log("id", mail_id);
             const result = await this.emailService.FetchSingleEmail(mail_id);
             if (!result.success) {
                 return res.status(400).json({ message: result.message, sendStatus: result.success });
@@ -104,14 +101,12 @@ class EmailController {
     }
 
     handleFetchDrafts: RequestHandler = async (req: Request, res: Response): Promise<Response> => {
-      console.log("fetch for  drafts");
         try {
             let email: string = "";
             if (!req.query.email || typeof req.query.email != "string") {
                 return res.status(404).json({ message: "email text required!!" });
             }
             email = req.query.email;
-            console.log("email", email);
             const result = await this.emailService.FetchDrafts(email);
             if (!result.success) {
                 return res.status(400).json({ message: result.message, sendStatus: result.success });

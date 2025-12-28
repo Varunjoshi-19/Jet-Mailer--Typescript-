@@ -6,6 +6,7 @@ const NewMessageIconActions = {
 
 
 export interface NewMessagePromptProps {
+    isDrafted? : boolean;
     toogleCloseAndOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 

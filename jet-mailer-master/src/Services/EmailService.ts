@@ -25,7 +25,6 @@ class EmailService implements IEmailService {
                 type,
             } = payload;
 
-            console.log("this is the payload", payload);
 
             if (type === "Sent") {
                 if (
